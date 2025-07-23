@@ -1,0 +1,15 @@
+Dekripsi Aplikasi
+
+Aplikasi Pemesanan Online
+Tujuan Aplikasi
+Aplikasi ini dirancang untuk memudahkan pengguna dalam melakukan pemesanan layanan secara online.
+Pengguna dapat memilih jenis layanan yang diinginkan, mengisi data diri, dan mengirimkan permintaan pemesanan.
+
+cara Penggunaan Aplikasi
+1. Buka aplikasi di browser Anda.
+2. Input Nama, No Hp, Jenis layanan dan jarak setelah semuanya diisi, klik tombol "hitung" untuk menghitung total biaya.
+
+Struktur Direktori
+/css untuk file CSS
+/img untuk gambar/logo
+/data untuk file JSON
