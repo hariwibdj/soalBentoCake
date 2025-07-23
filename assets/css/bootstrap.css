@@ -4953,6 +4953,12 @@ a.badge:focus, a.badge:hover {
   margin-bottom: 1rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  background-color: red;
+}
+.alert-danger {
+  background-color: #f2dede;
+  border-color: #ebcccc;
+  color: #a94442;
 }
 
 .alert-heading {

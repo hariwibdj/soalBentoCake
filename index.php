@@ -45,7 +45,7 @@ $berkas = "data.json"; // Path file untuk menyimpan data pemesanan
     <title>Form Pemesanan Bento Cake</title>
     <!-- Instruksi Kerja Nomor 5. -->
     <!-- Menghubungkan dengan library/berkas CSS. -->
-    <link rel="stylesheet" href="bootsrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
 
 </head>
 
@@ -56,7 +56,7 @@ $berkas = "data.json"; // Path file untuk menyimpan data pemesanan
 
         <!-- Instruksi Kerja Nomor 6. -->
         <!-- Menampilkan logo restoran -->
-        <img src="logo.jpg" alt="">
+        <img src="assets/images/logo.jpg" alt="">
 
 
         <!-- Form untuk memasukkan data pemesanan. -->
@@ -102,9 +102,13 @@ $berkas = "data.json"; // Path file untuk menyimpan data pemesanan
         </form>
     </div>
     <?php
+
 	//	Kode berikut dieksekusi setelah tombol Hitung ditekan.
 	if (isset($_POST['Pesan'])) {
-
+		if (empty($_POST['nama']) || empty($_POST['noHP']) || empty($_POST['jumlahPesanan']) || empty($_POST['lokasi'])) {
+			echo "<div class='alert alert-danger'>Mohon lengkapi semua field!</div>";
+			exit;
+		}
 		//	Variabel $dataPesanan berisi data-data pemesanan dari form dalam bentuk array.
 		$dataPesanan = array(
 			'nama' => $_POST['nama'],
