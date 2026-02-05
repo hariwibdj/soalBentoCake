@@ -42,47 +42,95 @@ $berkas = "data.json"; // Path file untuk menyimpan data pemesanan
 <html>
 
 <head>
-    <title>Form Pemesanan Bento Cake</title>
-    <!-- Instruksi Kerja Nomor 5. -->
-    <!-- Menghubungkan dengan library/berkas CSS. -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
+	<title>Form Pemesanan Bento Cake</title>
+	<!-- Instruksi Kerja Nomor 5. -->
+	<!-- Menghubungkan dengan library/berkas CSS. -->
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<style>
+		.container {
+			/* display: flex; */
+			/* justify-content: space-around; */
 
+		}
+
+		footer {
+			text-align: center;
+			padding: 10px;
+			background: #9ecf4a;
+			color: #df1111;
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+		}
+	</style>
 </head>
 
 <body>
-    <div class="container border">
-        <!-- Menampilkan judul halaman -->
-        <h3>Form Pemesanan Bento Cake</h3>
+	<nav class="navbar navbar-expand-lg bg-primary ">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">BOLU CAKE</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="#">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
 
-        <!-- Instruksi Kerja Nomor 6. -->
-        <!-- Menampilkan logo restoran -->
-        <img src="assets/images/logo.jpg" alt="">
+					<li class="nav-item">
+						<a class="nav-link disabled" aria-disabled="true">Disabled</a>
+					</li>
+				</ul>
+				<form class="d-flex" role="search">
+					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+					<button class="btn btn-outline-success" type="submit">Search</button>
+				</form>
+			</div>
+		</div>
+	</nav>
 
 
-        <!-- Form untuk memasukkan data pemesanan. -->
-        <form action="index.php" method="post" id="formPemesanan">
-            <div class="row">
-                <!-- Masukan data nama pelanggan. Tipe data text. -->
-                <div class="col-lg-2"><label for="nama">Nama Pelanggan:</label></div>
-                <div class="col-lg-2"><input type="text" id="nama" name="nama"></div>
-            </div>
-            <div class="row">
-                <!-- Masukan data nomor HP pelanggan. Tipe data number. -->
-                <div class="col-lg-2"><label for="nomor">Nomor HP:</label></div>
-                <div class="col-lg-2"><input type="number" id="noHP" name="noHP" maxlength="16"></div>
-            </div>
-            <div class="row">
-                <!-- Masukan data jumlah pesanan. Tipe data number. -->
-                <div class="col-lg-2"><label for="nomor">Jumlah Pesanan:</label></div>
-                <div class="col-lg-2"><input type="number" id="jumlahPesanan" name="jumlahPesanan" maxlength="4"></div>
-            </div>
-            <div class="row">
-                <!-- Masukan pilihan lokasi lokasi resto. -->
-                <div class="col-lg-2"><label for="tipe">Lokasi Pengiriman:</label></div>
-                <div class="col-lg-2">
-                    <select id="lokasi" name="lokasi">
-                        <option value="">- Pilih lokasi -</option>
-                        <?php
+	<div class="container border">
+		<!-- Menampilkan judul halaman -->
+		<h3>Form Pemesanan Bento Cake</h3>
+
+		<!-- Instruksi Kerja Nomor 6. -->
+		<!-- Menampilkan logo restoran -->
+		<img src="assets/images/logo.jpg" alt="">
+
+
+		<!-- Form untuk memasukkan data pemesanan. -->
+		<form action="index.php" method="post" id="formPemesanan">
+			<div class="row mt-3">
+				<!-- Masukan data nama pelanggan. Tipe data text. -->
+				<div class="col-lg-2"><label for="nama" class="form-label">Nama Pelanggan:</label></div>
+				<div class="col-lg-2"><input type="text" id="nama" name="nama" class="form-control"></div>
+			</div>
+			<div class="row mt-3">
+				<!-- Masukan data nomor HP pelanggan. Tipe data number. -->
+				<div class="col-lg-2"><label for="nomor" class="form-label">Nomor HP:</label></div>
+				<div class="col-lg-2"><input type="number" id="noHP" name="noHP" maxlength="16" class="form-control">
+				</div>
+			</div>
+			<div class="row mt-3">
+				<!-- Masukan data jumlah pesanan. Tipe data number. -->
+				<div class="col-lg-2"><label for="nomor" class="form-label">Jumlah Pesanan:</label></div>
+				<div class="col-lg-2"><input type="number" id="jumlahPesanan" name="jumlahPesanan" maxlength="4"
+						class="form-control"></div>
+			</div>
+			<div class="row mt-3">
+				<!-- Masukan pilihan lokasi lokasi resto. -->
+				<div class="col-lg-2"><label for="tipe" class="form-label">Lokasi Pengiriman:</label></div>
+				<div class="col-lg-2">
+					<select id="lokasi" name="lokasi" class="form-control">
+						<option value="">- Pilih lokasi -</option>
+						<?php
 						//	Instruksi Kerja Nomor 7.
 						//	Menampilkan dropdown pilihan daerah pengiriman berdasarkan data pada array lokasi menggunakan perulangan.
 						foreach ($lokasi as $kota) {
@@ -90,18 +138,18 @@ $berkas = "data.json"; // Path file untuk menyimpan data pemesanan
 						}
 
 						?>
-                    </select>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Tombol Submit -->
-                <div class="col-lg-2"><button class="btn btn-primary" type="submit" form="formPemesanan" value="Pesan"
-                        name="Pesan">Pesan</button></div>
-                <div class="col-lg-2"></div>
-            </div>
-        </form>
-    </div>
-    <?php
+					</select>
+				</div>
+			</div>
+			<div class="row mt-3">
+				<!-- Tombol Submit -->
+				<div class="col-lg-2"><button class="btn btn-primary" type="submit" form="formPemesanan" value="Pesan"
+						name="Pesan">Pesan</button></div>
+				<div class="col-lg-2"></div>
+			</div>
+		</form>
+	</div>
+	<?php
 
 	//	Kode berikut dieksekusi setelah tombol Hitung ditekan.
 	if (isset($_POST['Pesan'])) {
@@ -160,6 +208,7 @@ $berkas = "data.json"; // Path file untuk menyimpan data pemesanan
 		}
 
 
+
 		// Instruksi Kerja Nomor 10.
 		//	Variabel $totalTagihan berisi nilai total tagihan yang didapat dari nilai tagihan awal ditambah ongkir.
 		// $totalTagihan = ....
@@ -210,6 +259,9 @@ $berkas = "data.json"; // Path file untuk menyimpan data pemesanan
 			";
 	}
 	?>
+
+	<footer>hariwib.com</footer>
+
 </body>
 
 </html>

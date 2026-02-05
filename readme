@@ -3,13 +3,17 @@ Dekripsi Aplikasi
 Aplikasi Pemesanan Online
 Tujuan Aplikasi
 Aplikasi ini dirancang untuk memudahkan pengguna dalam melakukan pemesanan layanan secara online.
-Pengguna dapat memilih jenis layanan yang diinginkan, mengisi data diri, dan mengirimkan permintaan pemesanan.
+Pengguna dapat mengisi jumlah pesanan dan lokasi pengiriman untuk mengetahui jumlah tahihan dan total tagihan setelah ditambah ongkos kirim.
 
 cara Penggunaan Aplikasi
 1. Buka aplikasi di browser Anda.
-2. Input Nama, No Hp, Jenis layanan dan jarak setelah semuanya diisi, klik tombol "hitung" untuk menghitung total biaya.
+2. Input Nama, No Hp, Jenis layanan dan jarak setelah semuanya diisi, klik tombol "hitung" untuk menghitung total biaya. Jika data tidak diisi muncul pesan mohon lengkapi semua field.
 
 Struktur Direktori
-/css untuk file CSS
-/img untuk gambar/logo
-/data untuk file JSON
+assets/
+      /css ->untuk file CSS
+      /images ->untuk gambar/logo
+data.json -> untuk file JSON
+index.php -> file utama yang akan diakses.
+readme -> petunjuk dan informasi aplikasi
+
